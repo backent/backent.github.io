@@ -1,91 +1,170 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width , initial-scale=1.0">
 	<title></title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="main.css">
-	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Source+Code+Pro" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="resetStyleSheet.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	
-	<header>
-		<div class="brand-logo">
-			CarRent
-		</div>
 
+	<section class="section-1">
 		<nav>
-			<ul>
-				<li>Cabang</li>
-				<li>Info</li>
-			</ul>
+
+			<div class="icon">
+				RentCar
+			</div>
+
+			<div class="navlink">
+				 <div class="link">
+				 	Galeri
+				 </div>
+				 <div class="link">
+				 	Tentang Kami
+				 </div>
+			</div>
 		</nav>
+		
+		<main>
+			<h1>
+				Pesan Mobil Aman Nyaman
+			</h1>
 
-		<div class="search-engine">
-			<h2>
-				Cari Mobil
-			</h2>
-			<div class="seach-box">
-				<input type="text">	
+			<div class="box-pemesanan">
+				<form action="#">
+					<div class="form-group">
+						<label>Tanggal Ambil</label>
+						<input type="date" name="">
+						<input type="date" name="">
+					</div>
+					<div class="form-group">
+						<label>Tanggal Kembali</label>
+						<input type="date" name="">
+						<input type="date" name="">
+					</div>
+					<div class="form-group">
+						<label>Jenis Mobil</label>
+						<select>
+							<option>pilih mobil</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Merk Mobil</label>
+						<select>
+							<option>pilih mobil</select>
+						</select>
+					</div>
+					<input type="submit" name="submit" value="Pesan Sekarang">
+				</form>
+			</div>
+		</main>
+	</section>
+
+	<section class="section-2">
+		<div class="quote">
+			“Kepercayaan konsumen <br>
+			merupakan syarat mutlak <br>
+			untuk membangun bisnis online yang sukses” <br> 
+			― Dian Nafi, 101 Bisnis Online Paling Laris
+		</div>
+
+		<div class="review">
+			<div class="review-box">
+				<div class="img-viewer">
+					
+				</div>
+				<div class="comment-viewer">
+					"Baik pelayanyan maupun <br>
+					 kendaraan, semuanya <br>
+					 memuaskan" <br>
+					-Anonymus
+				</div>
+			</div>
+			<div class="review-box">
+				<div class="img-viewer">
+					
+				</div>
+				<div class="comment-viewer">
+					"Baik pelayanyan maupun <br>
+					 kendaraan, semuanya <br>
+					 memuaskan" <br>
+					-Anonymus
+				</div>
+			</div>
+			<div class="review-box">
+				<div class="img-viewer">
+					
+				</div>
+				<div class="comment-viewer">
+					"Baik pelayanyan maupun <br>
+					 kendaraan, semuanya <br>
+					 memuaskan" <br>
+					-Anonymus
+				</div>
 			</div>
 		</div>
-	</header>
-	
-	<main>
-		<div class="index-banner">
-			<div class="vertical-align">
-				<h1>
-					jasa sewa <br>mobil
-				</h1>
+	</section>
 
-				<h2>
-					anda merupakan prioritas kami
-				</h2>
+	<section class="section-3">
+		<header>
+			Galeri
+		</header>
+
+		<div class="navlink">
+			<div class="link">
+			Toyota	
 			</div>
+			<div class="link">
+			Mitshubishi
+			</div>
+			<div class="link">
+			BMW
+			</div>
+			<div class="link">
+			Mercy
+			</div>
+
 		</div>
 
-		<div class="wrap">
-			<div class="index-fitur">
-				<div class="design">
-					Galeri
-				</div>
+		<div class="galeri-box">
+		</div>
+	</section>
 
-				<div class="panduan">
-					Panduan
-				</div>
-
-				<div class="pemesanan">
-					Pemesanan
-				</div>
+	<section class="section-4">
+		<div class="box-layanan">
+			<div class="formulir">
+				<img src="./img/file-20.svg">
+				<h1>Formulir</h1>
+				<p>Isi data <br>
+					yang dibutuh kan <br> 
+					dengan lengkap <br>
+				</p>
+			</div>
+			<div class="proses">
+				<img src="./img/delivery-9.svg">
+				<h1>Proses Waktu</h1>
+				<p>Proses cepat <br>
+					tidak sampai 24 jam</p>
+				
+			</div>
+			<div class="siap">
+				<img src="./img/delivery-7.svg">
+				<h1>Mobil Siap</h1>
+				<p>Mobil siap <br>	
+					dalam keadaan prima
+				</p>
+				
 			</div>
 		</div>
-	</main>
-	
-	<div class="wrap">
-		<footer>	
-			<div class="navfoot">
-				<ul>
-					<li class="navfoot-cabang">Cabang</li>
-					<li class="navfoot-info">Info</li>
-				</ul>
-			</div>
+		
+	</section>
 
-			<div class="keterangan">
-				<ul>
-					<li>Rental Mobil</li>
-					<li>Rental Mobil - Jakarata</li>
-					<li>Jasa & Sewa Mobil  </li>
-				</ul>
-			</div>
-
-			<div class="sosmed">
-				<ul>
-					<li><img src="twit.png" alt=""></li>
-				</ul>
-			</div>
-		</footer>
-	</div>
+	<footer>
+		<h1>Kunjungi Kami di</h1>
+		<div class="footer-nav-link">	
+			<div class="link">Twitter</div>
+			<div class="link">Facebook</div>
+			<div class="link">Instagram</div>
+		</div>
+	</footer>
 </body>
 </html>
