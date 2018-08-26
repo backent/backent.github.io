@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+	<script src="../library/firebaseInitialize.js"></script>	
+	<script src="../library/firebaseAuth.js"></script>	
+	<script src="../library/firebaseStorage.js"></script>	
+	<script src="../library/firebaseDatabase.js"></script>	
+ </head>
+<body>
+	<input id="image" type="file" accept="image/*">
+	<progress value="0" max="100" id="uploader">0%</progress>
+	<br>
+	<label for="nama">nama</label>
+	<input type="text" id="nama" placeholder="name here . . .">
+	<br>
+	hai <br>
+	<input id="inputStatusProfil" placeholder="status here . . ."></input>
+
+	<button id="update">update</button>
+	<button id="test">test</button>
+	<script>
+		//get element
+		var nama = document.getElementById('nama');
+		var update = document.getElementById('update');
+		var images = document.getElementById('image');
+		var uploader  = document.getElementById('uploader');
+		var inputStatusProfil = document.getElementById('inputStatusProfil');
+		var test = document.getElementById('test');
+		test.addEventListener('click',()=>{
+			console.log(inputStatusProfil.value);
+		});
+
+		var imgData;
+		var databuffer = {};
+		//most logic happend here
+		firebase.auth().onAuthStateChanged(user=>{
+			uid = user.uid;
+			console.log(uid);
+			var data = 	firebase.database().ref('users/'+ uid);
+
+
+			//give name value
+			data.once('value',snap=>{
+				console.log(snap.val());
+				nama.value = snap.val().nama;
+				inputStatusProfil.value = snap.val().statusProfil;
+
+			});
+
+			//update
+			update.addEventListener('click',()=>{
+				//updatednama here
+				databuffer['nama'] = nama.value.trim();
+				if(databuffer.nama){
+					Database.updateData({'nama': databuffer.nama}, 'users/'+uid,(err,mess)=>{
+						if (!err) {
+						console.log(mess);
+						}
+						else if(err){
+							console.log(err);
+						}
+					});
+
+				}
+				databuffer['status'] = inputStatusProfil.value.trim();
+				
+				if(databuffer.status){
+					console.log(databuffer.status)
+					Database.updateData({'statusProfil': databuffer.status}, 'users/'+uid,(err,mess)=>{
+						if (!err) {
+						console.log(mess);
+						}
+						else if(err){
+							console.log(err);
+						}
+					});
+
+				}
+				
+				if(imgData){
+					Storage.createMedia('users/'+ uid + '/photoProfile.jpg',imgData,uploader,(err,mess)=>{
+						if(!err){
+							console.log(mess);
+						}
+						else if(err){
+							console.log(err);
+						}
+
+					});
+				}
+
+			});
+
+			//input image's data to var
+			
+			images.addEventListener('change',e=>{
+				imgData = e.target.files[0];
+				console.log("sukses terganti");
+			});
+
+			
+		});		
+	</script>
+</body>
+</html>
